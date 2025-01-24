@@ -13,7 +13,7 @@ const resumeData =
         "about": " ",
         "interests": " ",
         "objective": "研發經理/專案經理/產品經理",
-        "aboutme": "擁有豐富的學術背景和多年的工作經驗，對機械工程和研發領域具有廣泛的知識、經驗和技能，同時帶領專案團隊或研發團隊也有15年以上經驗。擁有流利的英文能力，尤其是跨國合作的協同開發特別有經驗。對於新的領域非常有興趣，像是電動車、機器人、智慧機器、智慧物聯網等。雖然年紀已50+，還是期待可以嘗試新的領域以取得更多的成就，為公司的發展做出更大的貢獻。"
+        "aboutme": "擁有豐富的學術背景和多年的工作經驗，對機械工程和研發領域具有廣泛的知識、經驗和技能，同時帶領專案團隊或研發團隊也有15年以上經歷，帶領團隊就像經營自己的事業一樣用心。此外擁有流利的英文能力，尤其是跨國合作的協同開發特別有經驗。對於新的領域非常有興趣，像是電動車、機器人、智慧機器、智慧物聯網等。雖然年紀已50+，還是期待可以嘗試新的領域以取得更多的成就，為公司的發展做出更大的貢獻。"
     },
 
     "education": [
@@ -126,7 +126,8 @@ const resumeData =
                ["Software:", "MS-Office", "MS-Project"],
                ["Webpage:", "HTML", "CSS", "Bootstrap", "MySql", "MongoDB"],
                ["App:", "Thunkable", "App-Inventor"],
-               ["Management:", "研發團隊管理", "專案管理", "策略規劃與制定", "問題解決", "產學合作", "異業合作","跨部門/跨國溝通"]
+               ["Management:", "研發團隊管理", "專案管理", "策略規劃與制定", "問題解決", "產學合作", "異業合作","跨部門/跨國溝通"],
+               ["中華職訓/AI智慧系統整合(450Hrs):", "網頁前端: HTML CSS Javascript Bootstrap", "<br>網頁後端: Python Flask MySql","<br>物聯網控制: Arduino Sketch/C++","<br>手機App控制: Thunkable App-Inventor","<br>AI影像辨識/機器學習/深度學習: OpenCV NumPy Pandas TensorFlow PyTorch PyPlot"]
     ],
 
     "certifications": ["PMP專案管理", "TOEIC金色證書", "GEPT中高級", "網頁設計丙級", "電腦軟體應用乙級", "Engineer-in-Training Certification"]
