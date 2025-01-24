@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mystyle.css">
+    <title>李明修履歷</title>
+</head>
+<body>
+    <div id="divall">
+        <header id="myheader">
+            <img id="mypic">
+            <h1 id="myname"></h1>
+            <h2 id="mybirthday"></h2>
+            <h2 id="myaddress"></h2>
+            <h2 id="myemail"></h2>
+            <h2 id="myphone"></h2>
+            <h2 id="myobjective"></h2>
+            <br>
+            <h2 id="aboutme"></h2>
+            <br>
+        </header>
+        <nav></nav>
+        <div id="mybody">
+            <div id="education">
+                <button id="myschools" class="mybutton">學歷: </button>
+                <div id="school"></div>
+            </div>
+            <div id="experience">
+                <button id="mycompanies" class="mybutton">經歷: </button>
+                <div id="company"></div>
+            </div>
+            <div id="skills">
+                <button id="myskills" class="mybutton">技能: </button>
+                <div id="skill"></div>
+            </div>
+            <div id="certifications">
+                <button id="mycertifications" class="mybutton">證書: </button>
+                <div id="certification"></div>
+            </div>
+
+        </div>
+        <aside></aside>
+        <footer></footer>
+    </div>
+    <script src="./data/resume.js"></script>
+    <script>
+        
+        //header info
+        document.getElementById('mypic').src = "./images/"+resumeData.personal.picture;
+        document.getElementById('myname').innerHTML= resumeData.personal.name;
+        // document.getElementById('mybirthday').innerHTML= resumeData.personal.birthday + "&nbsp" + resumeData.personal.age + "歲";
+        document.getElementById('myaddress').innerHTML= resumeData.personal.address;
+        document.getElementById('myemail').innerHTML= resumeData.personal.email;
+        document.getElementById('myphone').innerHTML= resumeData.personal.phone;
+        document.getElementById('myobjective').innerHTML= resumeData.personal.objective;
+        document.getElementById('aboutme').innerHTML= resumeData.personal.aboutme;
+
+        //create education
+        let schools = resumeData.education;
+        schools.forEach(element => {
+            let newDiv = document.createElement('div');
+            newDiv.innerHTML = `<p class='titleclass'>${element.school}\n</p>
+                                <p>${element.department}&nbsp&nbsp${element.degree}\n</p>
+                                <p>${element.time}\n</p>
+                                <p>${element.thesis}\n</p>`;
+            newDiv.classList.add('contentclass');
+            document.getElementById('school').appendChild(newDiv);
+        });
+        //display or hide the education
+        let eventSchools = 0;
+        document.getElementById('school').style.display = 'none';
+        function disSchools () {
+            if (eventSchools == 0) {
+                document.getElementById('school').style.display = 'block';
+                eventSchools = 1;
+            } else {
+                document.getElementById('school').style.display = 'none';
+                eventSchools = 0;
+            }
+        }
+        document.getElementById('myschools').addEventListener('click',disSchools);
+
+        //create experience
+        let experiences = resumeData.experience;
+        experiences.forEach(element => {
+            let newDiv = document.createElement('div');
+                newDiv.innerHTML= `<p class='titleclass'>${element.company}\n</p>
+                                   <p>${element.location}\n</p>
+                                   <p>${element.time}&nbsp&nbsp${element.duration}\n</p>
+                                   <p>${element.department}&nbsp&nbsp${element.title}\n</p>`; 
+                                   let descriptions = element.description;
+                                   descriptions.forEach(item => {
+                                        newDiv.innerHTML += `*${item}<br>`;
+                                   });
+            newDiv.classList.add('contentclass');
+            document.getElementById('company').appendChild(newDiv);
+            
+        });
+        //display or hide the experience
+        let eventExperiences = 0;
+        document.getElementById('company').style.display = 'none';
+        function disCompanies () {
+            if (eventExperiences == 0) {
+                document.getElementById('company').style.display = 'block';
+                eventExperiences = 1;
+            } else {
+                document.getElementById('company').style.display = 'none';
+                eventExperiences= 0;
+            }
+        }
+        document.getElementById('mycompanies').addEventListener('click',disCompanies);
+        
+        //create skills
+        let skills = resumeData.skills;
+        skills.forEach(element => {
+            let newDiv = document.createElement('div');
+                newDiv.innerHTML = '';
+                let nItem = element.length;
+                newDiv.innerHTML += `<p class='titleclass'>${element[0]}</p>`;
+                for (let i = 1; i < nItem; i++) {
+                    newDiv.innerHTML += `${element[i]}&nbsp&nbsp`;
+                }
+            newDiv.classList.add('contentclass');
+            document.getElementById('skill').appendChild(newDiv);
+        });
+
+        //display or hide the skills
+        let eventSkills = 0;
+        document.getElementById('skill').style.display = 'none';
+        function disSkills () {
+            if (eventSkills == 0) {
+                document.getElementById('skill').style.display = 'block';
+                eventSkills = 1;
+            } else {
+                document.getElementById('skill').style.display = 'none';
+                eventSkills= 0;
+            }
+        }
+        document.getElementById('myskills').addEventListener('click',disSkills);
+
+        //create certifications
+        let certifications = resumeData.certifications;
+        certifications.forEach(element => {
+            let newDiv = document.createElement('div');
+            newDiv.innerHTML = `<p><a href='./data/${element}.pdf' target='_blank'>${element}</a></p>`;
+            newDiv.classList.add('contentclass');
+            document.getElementById('certification').appendChild(newDiv);
+        });
+        //display or hide the certifications
+        let eventCertifications = 0;
+        document.getElementById('certification').style.display = 'none';
+        function disCertifications () {
+            if (eventCertifications == 0) {
+                document.getElementById('certification').style.display = 'block';
+                eventCertifications = 1;
+            } else {
+                document.getElementById('certification').style.display = 'none';
+                eventCertifications = 0;
+            }
+        }
+        document.getElementById('mycertifications').addEventListener('click',disCertifications);
+
+    </script>
+</body>
+</html>

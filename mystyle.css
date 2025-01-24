@@ -1,0 +1,85 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	font-size: 16px;
+	font-family: "標楷體", sans-serif;
+	font-weight: bold;
+    color: #333366;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color:red;
+    font-size: 1.2em;
+}
+
+#divall {
+    margin: 0 auto;
+    /* background-color: lightyellow; */
+}
+
+/* header setup */
+#myheader {
+    margin: 20px auto;
+    width: 500px;
+    /* background-color: lightblue; */
+}
+
+#mypic {
+    display: block;
+    margin: auto;
+    width: 300px;
+}
+
+#myname {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/*Body Setup */
+#mybody {
+    margin: 20px auto;
+    width: 500px;
+    /* background-color: lightpink; */
+}
+
+.mybutton {
+	padding: 5px;
+	font-size: 20px;
+    font-weight: bolder;
+	background-color: #333366;
+	color: #ffffff;
+    display: block;
+    margin: 0 auto;
+}
+
+.mybutton:hover {
+    background-color: red;
+}
+
+
+.contentclass {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.titleclass {
+    font-size: 20px;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+
+#education, #experience, #skills, #certifications {
+    margin-top: 20px;
+}
+
